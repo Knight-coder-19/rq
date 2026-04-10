@@ -1,0 +1,670 @@
+[
+  {
+    "id": 1,
+    "question": "John stands up to voice his differing opinion during a critical meeting, despite knowing it might be unpopular. What Agile value is John demonstrating?",
+    "options": ["Empathy", "Respect", "Trust", "Courage"],
+    "answer": "Courage"
+  },
+  {
+    "id": 2,
+    "question": "During a team meeting, Nora realizes that she made an error in a report. She openly acknowledges her mistake and explains what went wrong. What Agile value is Nora demonstrating?",
+    "options": ["Empathy", "Openness", "Trust", "Respect"],
+    "answer": "Trust"
+  },
+  {
+    "id": 3,
+    "question": "During a team discussion about a new project, Jagdish values the input of all team members equally and encourages diverse thinking. What Agile value is Jagdish demonstrating?",
+    "options": ["Respect", "Courage", "Empathy", "Trust"],
+    "answer": "Respect"
+  },
+  {
+    "id": 4,
+    "question": "Which of the following principles emphasizes the importance of groups that are empowered to manage their own work?",
+    "options": ["Self-directed teams", "Clarity of outcome", "Iteration and learning"],
+    "answer": "Self-directed teams"
+  },
+  {
+    "id": 5,
+    "question": "Jordan and his friends are planning a camping trip. Jordan starts by clearly defining the goal of the trip, which is to have a relaxing and enjoyable experience. Throughout the planning process, Jordan ensures that every decision aligns with this goal. Which Agile principle is Jordan applying?",
+    "options": ["Clarity of outcome", "Iteration and learning", "Self-directed teams"],
+    "answer": "Clarity of outcome"
+  },
+  {
+    "id": 6,
+    "question": "What is the correct sequence of steps to act on the clarity of outcome principle?",
+    "options": [
+      "Define the problem, keep the user outcome in sight, and determine the user outcome",
+      "Define the problem, determine the user outcome, and keep the user outcome in sight",
+      "Keep the user outcome in sight, define the problem, and determine the user outcome",
+      "Determine the user outcome, define the problem, and keep the user outcome in sight"
+    ],
+    "answer": "Define the problem, determine the user outcome, and keep the user outcome in sight"
+  },
+  {
+    "id": 7,
+    "question": "What is the first step to act on the iteration and learning principle?",
+    "options": [
+      "Listen and learn from feedback received.",
+      "Start by doing and trying small pieces of work.",
+      "Course correct as necessary to meet user outcomes.",
+      "Iterate by making adjustments based on feedback received."
+    ],
+    "answer": "Start by doing and trying small pieces of work."
+  },
+  {
+    "id": 8,
+    "question": "John is preparing a new recipe for a community potluck. After cooking a small batch, he shares it with his friends. They taste it and provide their feedback. What should be John's next step to ensure the recipe is well-received at the potluck?",
+    "options": [
+      "Test the recipe with a different group of friends for more feedback.",
+      "Adjust the recipe based on the feedback.",
+      "Serve the dish as it is and make a note for future improvements.",
+      "Document the feedback and plan to try a different recipe."
+    ],
+    "answer": "Adjust the recipe based on the feedback."
+  },
+  {
+    "id": 9,
+    "question": "Noelle is the leader of her school's event planning committee. She wants to ensure that her team can keep track of progress on various tasks. Which of the following Agile practices can help Noelle achieve this?",
+    "options": ["Retrospective", "Wall of work", "Social contract", "Mood marbles"],
+    "answer": "Wall of work"
+  },
+  {
+    "id": 10,
+    "question": "Shifa wants to gauge the emotional well-being of her team members. Which of the following Agile practices can help Shifa achieve this?",
+    "options": ["Social contract", "Shuhari", "Mood marbles", "Showcase"],
+    "answer": "Mood marbles"
+  },
+  {
+    "id": 11,
+    "question": "Gurpreet is part of a team that meets every morning to discuss their progress and plans. Each team member shares their accomplishments, focus for the day, and any challenges. Which Agile practice is Gurpreet and his team implementing?",
+    "options": ["Stand-up", "Retrospective", "Showcase", "Shuhari"],
+    "answer": "Stand-up"
+  },
+  {
+    "id": 12,
+    "question": "After gathering everyone for a stand-up meeting, what is the next step?",
+    "options": [
+      "Assign new tasks to team members.",
+      "Have team members give their status updates.",
+      "Note any meetings that need to be scheduled.",
+      "Review and adjust the project's timeline."
+    ],
+    "answer": "Have team members give their status updates."
+  },
+  {
+    "id": 13,
+    "question": "In which Shuhari stage do you move away from traditional methods, develop a new approach, and teach it to others?",
+    "options": ["Ha", "Ri", "Shu"],
+    "answer": "Ri"
+  },
+  {
+    "id": 14,
+    "question": "During a team meeting, Maxim introduces mood marbles and asks each team member to select a marble that represents their current emotional state and drop it into a jar. What is Maxim's purpose of using mood marbles in this scenario?",
+    "options": [
+      "To identify key issues in the project",
+      "To track project milestones and deadlines",
+      "To evaluate how the team is feeling",
+      "To organize tasks and assign responsibilities"
+    ],
+    "answer": "To evaluate how the team is feeling"
+  },
+  {
+    "id": 15,
+    "question": "Which Agile practice allows a team to review their performance and reflect on ways to improve?",
+    "options": ["Social contract", "Retrospective", "Stand-up", "Mood marbles"],
+    "answer": "Retrospective"
+  },
+  {
+    "id": 16,
+    "question": "When creating a social contract, which step involves writing down ideas on sticky notes and sticking them anywhere on the wall?",
+    "options": ["Finalize the contract", "Discuss and share", "Brainstorm individually", "Group similar ideas"],
+    "answer": "Brainstorm individually"
+  },
+  {
+    "id": 17,
+    "question": "After the team understands the problems, challenges, and desired outcomes, what is the next step in the Agile pattern?",
+    "options": [
+      "Explore the required changes and strategies",
+      "Mobilize the team",
+      "Build and test",
+      "Implement the changes"
+    ],
+    "answer": "Explore the required changes and strategies"
+  },
+  {
+    "id": 18,
+    "question": "What is the first step in Agile patterns, regardless of the specific pattern being used?",
+    "options": ["Understand", "Mobilize", "Explore and strategize", "Build, test, and implement"],
+    "answer": "Mobilize"
+  },
+  {
+    "id": 19,
+    "question": "Which Agile pattern helps business leaders develop the company's direction?",
+    "options": ["Agile operations pattern", "Agile program pattern", "Agile strategy and governance pattern"],
+    "answer": "Agile strategy and governance pattern"
+  },
+  {
+    "id": 20,
+    "question": "Which Agile pattern is suitable for managing project work with a defined start and end?",
+    "options": ["Agile operations pattern", "Agile program pattern", "Agile strategy and governance pattern"],
+    "answer": "Agile program pattern"
+  },
+  {
+    "id": 21,
+    "question": "Winny manages the payroll system for a company and needs to handle the monthly process of distributing salaries to employees. Which Agile pattern should Winny use to effectively manage this repeatable process?",
+    "options": ["Agile operations pattern", "Agile strategy and governance pattern", "Agile program pattern"],
+    "answer": "Agile operations pattern"
+  },
+  {
+    "id": 22,
+    "question": "Paleo is a great team member who always admits to his mistakes and is willing to ask others for help. Which Agile value is Paleo demonstrating?",
+    "options": ["Openness", "Courage", "Trust", "Respect"],
+    "answer": "Courage"
+  },
+  {
+    "id": 23,
+    "question": "Your team has just defined the problem they are trying to solve. What is the next step to ensure clarity of outcome?",
+    "options": [
+      "Determine the user outcome.",
+      "Keep the user outcome in sight.",
+      "Identify risks and dependencies.",
+      "Collect feedback from stakeholders."
+    ],
+    "answer": "Determine the user outcome."
+  },
+  {
+    "id": 24,
+    "question": "Some students post photos on social media causing issues. The principal and teachers define the problem and outcome, then leave the students to figure out who, what, and how to get the work done. Which Agile principle is described?",
+    "options": ["Self-directed teams", "Clarity of outcome", "Iteration and learning"],
+    "answer": "Self-directed teams"
+  },
+  {
+    "id": 25,
+    "question": "Sally and her friends try different lava solutions one by one for their volcano project, improving each time until they get the best outcome. What Agile principle is the group applying?",
+    "options": ["Clarity of outcome", "Self-directed teams", "Iteration and learning"],
+    "answer": "Iteration and learning"
+  },
+  {
+    "id": 26,
+    "question": "Your team is experiencing a lot of conflict and work isn't getting completed. You want to figure out how the team is feeling. What Agile practice would be most appropriate?",
+    "options": ["Wall of work", "Social contract", "Shuhari", "Mood marbles"],
+    "answer": "Mood marbles"
+  },
+  {
+    "id": 27,
+    "question": "During a heated discussion, Puran notices a team member's suggestion is different from the rest. Instead of dismissing it, Puran takes time to understand their perspective by asking thoughtful, non-judgmental questions. Which Agile value is Puran demonstrating?",
+    "options": ["Empathy", "Respect", "Courage", "Openness"],
+    "answer": "Empathy"
+  },
+  {
+    "id": 28,
+    "question": "As an Agile practitioner, what is the central question you should always ask yourself?",
+    "options": [
+      "How can I get better today?",
+      "What is puzzling me?",
+      "Am I breaking the social contract?",
+      "How can I work faster?"
+    ],
+    "answer": "How can I get better today?"
+  },
+  {
+    "id": 29,
+    "question": "You are working on a project for your boss and have just finished a significant part of it. You're excited to share it and get feedback. What Agile practice will you be participating in?",
+    "options": ["Showcase", "Social contract", "Shuhari", "Retrospective"],
+    "answer": "Showcase"
+  },
+  {
+    "id": 30,
+    "question": "Lily is the head of a non-profit organization that aims to expand its reach and impact over the next five years. She wants to develop a clear direction for the organization. Which Agile pattern should Lily use?",
+    "options": ["Agile strategy and governance pattern", "Agile operations pattern", "Agile program pattern"],
+    "answer": "Agile strategy and governance pattern"
+  },
+  {
+    "id": 31,
+    "question": "A new team meets to think about how they will work together. They write ideas on sticky notes, group similar ideas, write descriptive statements, and rewrite each as 'I expect that...' What Agile practice is the team using?",
+    "options": ["Retrospective", "Social contract", "Mood marbles", "Showcase"],
+    "answer": "Social contract"
+  },
+  {
+    "id": 32,
+    "question": "Which of the following statements is false?",
+    "options": [
+      "Agile can be done remotely.",
+      "Agile can be used for all projects.",
+      "Agile is very disciplined.",
+      "Agile is limited to software work."
+    ],
+    "answer": "Agile is limited to software work."
+  },
+  {
+    "id": 33,
+    "question": "You're in a stand-up and a team member has been talking for a while going into technical details of a blocking problem. He asks for your opinion. What should you do?",
+    "options": [
+      "Defer the question to your manager or team lead.",
+      "Tell him you don't know and suggest contacting an expert.",
+      "Discuss some solutions with the team.",
+      "Suggest scheduling another meeting to discuss the issue in more depth."
+    ],
+    "answer": "Suggest scheduling another meeting to discuss the issue in more depth."
+  },
+  {
+    "id": 34,
+    "question": "During a stand-up, two questions are: 'What have you completed since the last stand-up?' and 'What will you be working on before the next stand-up?' What is the third question?",
+    "options": [
+      "What are your proposals for some initiatives for the team to try out?",
+      "What are your ideas to solve your teammate's blockers?",
+      "What are your blockers?",
+      "What feedback have you received from stakeholders?"
+    ],
+    "answer": "What are your blockers?"
+  },
+  {
+    "id": 35,
+    "question": "Jason listens to others' viewpoints, suggestions, and ideas without judgment or dismissiveness. Which Agile value is Jason demonstrating?",
+    "options": ["Respect", "Openness", "Courage", "Trust"],
+    "answer": "Openness"
+  },
+  {
+    "id": 36,
+    "question": "Complete the sentence: Agile principles guide ___________ you do your work.",
+    "options": ["when", "who", "how", "why"],
+    "answer": "how"
+  },
+  {
+    "id": 37,
+    "question": "Which of the following is an example of program work?",
+    "options": [
+      "Conducting routine maintenance of office equipment",
+      "Resolving customer support tickets",
+      "Organizing a charity fundraiser event",
+      "Providing IT support for employees"
+    ],
+    "answer": "Organizing a charity fundraiser event"
+  },
+  {
+    "id": 38,
+    "question": "Which of the following teams is made up of members who do the bulk of the work?",
+    "options": ["Core team", "Extended team", "Governance team"],
+    "answer": "Core team"
+  },
+  {
+    "id": 39,
+    "question": "Which of the following best describes the purpose of the event phase in a project?",
+    "options": [
+      "To evaluate the success of the project after completion",
+      "To assign roles and responsibilities to team members",
+      "To identify the initial trigger or occurrence that signals the need for a project",
+      "To finalize the project budget"
+    ],
+    "answer": "To identify the initial trigger or occurrence that signals the need for a project"
+  },
+  {
+    "id": 40,
+    "question": "What is the primary purpose of a discovery workshop?",
+    "options": [
+      "To finalize the project budget",
+      "To assess team members' performance",
+      "To create a detailed project timeline",
+      "To align all team members on the project goals"
+    ],
+    "answer": "To align all team members on the project goals"
+  },
+  {
+    "id": 41,
+    "question": "Which of the following questions is typically addressed by the team during the discovery phase? (Select three that apply)",
+    "options": [
+      "What problem needs to be solved?",
+      "What are the blockers?",
+      "What is the budget for the project?",
+      "How will progress be measured?"
+    ],
+    "answer": ["What problem needs to be solved?", "What are the blockers?", "How will progress be measured?"]
+  },
+  {
+    "id": 42,
+    "question": "Your boss gives you a new project. Brian is ready to jump into the work. You explain how important it is to get everything set up before starting. Which of the following is unnecessary for the team to do before the first iteration begins?",
+    "options": [
+      "Have a showcase meeting.",
+      "Identify epics, features, and user stories.",
+      "Have a shared understanding of Agile and how the team will work.",
+      "Set project goals and make sure the team has a clear understanding of the goals."
+    ],
+    "answer": "Have a showcase meeting."
+  },
+  {
+    "id": 43,
+    "question": "Your team is pulling items from the backlog to work on for the next iteration creating an app for multiplication problems. What Agile practice is your team using to map progress for the iteration?",
+    "options": ["Wall of work", "User story", "Social contract", "Retrospective"],
+    "answer": "Wall of work"
+  },
+  {
+    "id": 44,
+    "question": "What is the smallest unit of work in the Agile framework?",
+    "options": ["Features", "Backlog", "User stories", "Epics"],
+    "answer": "User stories"
+  },
+  {
+    "id": 45,
+    "question": "Which one of the following is applied to all stories?",
+    "options": ["Acceptance criteria", "Acceptance list", "Definition of done", "Definition criteria"],
+    "answer": "Definition of done"
+  },
+  {
+    "id": 46,
+    "question": "Which of the following describes the high-level activities that span multiple iterations and possibly releases?",
+    "options": ["Epics", "User stories", "Features", "Contracts"],
+    "answer": "Epics"
+  },
+  {
+    "id": 47,
+    "question": "During an iteration release, the team received user feedback requiring a new requirement to be added to a feature. What should the team do?",
+    "options": [
+      "Decide how to let the client know they can't add the requirement into the product.",
+      "Change the work they're doing now to incorporate the new requirement.",
+      "Come up with an alternative, quick solution so they don't have to add the new requirement.",
+      "Decide how to work the new requirements into future iterations."
+    ],
+    "answer": "Decide how to work the new requirements into future iterations."
+  },
+  {
+    "id": 48,
+    "question": "Your team members just finished their first iteration. What should they do next?",
+    "options": [
+      "Start the next iteration.",
+      "Choose a new event to start working on.",
+      "Start the process over with a discovery workshop.",
+      "Move on to the next project."
+    ],
+    "answer": "Start the next iteration."
+  },
+  {
+    "id": 49,
+    "question": "You're starting a new project and the team is anxious to get to work. Which of the following is unnecessary for the team to complete before the first iteration begins?",
+    "options": [
+      "Set release goals.",
+      "Create a social contract.",
+      "Have a retrospective meeting.",
+      "Set project standards and guidelines."
+    ],
+    "answer": "Have a retrospective meeting."
+  },
+  {
+    "id": 50,
+    "question": "Which of the following is outside the scope of the discovery phase?",
+    "options": [
+      "The approved proposal is in place.",
+      "The release plan is complete.",
+      "The team defines the problem to be solved.",
+      "The team makes better decisions on how the work will get done."
+    ],
+    "answer": "The release plan is complete."
+  },
+  {
+    "id": 51,
+    "question": "Your manager asks your team to create a project map that outlines when different parts of your project will be completed and made available. What do you call this Agile practice?",
+    "options": ["User story", "Wall of work", "Release plan", "Social contract"],
+    "answer": "Release plan"
+  },
+  {
+    "id": 52,
+    "question": "Your boss assigns you to a project with three other core members and hands over an approved proposal. What phase do you move to now?",
+    "options": ["Program funnel", "Event", "Discovery", "Delivery"],
+    "answer": "Delivery"
+  },
+  {
+    "id": 53,
+    "question": "Which of the following phases starts the program pattern?",
+    "options": ["Program funnel", "Event", "Discovery", "Delivery"],
+    "answer": "Event"
+  },
+  {
+    "id": 54,
+    "question": "Your team is holding a discovery workshop. Which of the following questions is outside the scope of this workshop?",
+    "options": [
+      "What is the solution?",
+      "What is the cost?",
+      "What are the blockers?",
+      "What is the problem we're trying to solve?"
+    ],
+    "answer": "What is the cost?"
+  },
+  {
+    "id": 55,
+    "question": "You work at a car dealership. Juan calls to buy a car. He specifies a safe four-wheel-drive SUV with dark leather interior. Before he arrives, you have the car washed, waxed, filled with gas, and all paperwork completed. Which items are considered the dealership's 'definition of done'?",
+    "options": [
+      "The paperwork with all the finance details",
+      "Car washed, waxed, and filled with gas, and all the paperwork completed",
+      "The research you did to find the exact car for Juan",
+      "A safe four-wheel-drive SUV with dark leather interior"
+    ],
+    "answer": "Car washed, waxed, and filled with gas, and all the paperwork completed"
+  },
+  {
+    "id": 56,
+    "question": "In which phase does a small team spend a few days to understand the problem, explore options, make sure the right people are in place, and determine whether to move forward?",
+    "options": ["Discovery", "Delivery", "Event", "Program funnel"],
+    "answer": "Discovery"
+  },
+  {
+    "id": 57,
+    "question": "Which of the following is an example of operations work?",
+    "options": [
+      "Planning a project timeline",
+      "Resolving customer support tickets",
+      "Developing a new product feature",
+      "Conducting market research"
+    ],
+    "answer": "Resolving customer support tickets"
+  },
+  {
+    "id": 58,
+    "question": "After evaluating the urgency of several help desk tickets, Mark decides which ones should be addressed first based on their importance. Which phase of the operations pattern is Mark engaged in?",
+    "options": ["Prioritization", "Delivery", "Request", "Operations funnel"],
+    "answer": "Prioritization"
+  },
+  {
+    "id": 59,
+    "question": "On a core team, who is responsible for holding the vision of the outcome and prioritizing the work?",
+    "options": ["Subject matter expert", "Iteration manager", "Product owner", "Scrum master"],
+    "answer": "Product owner"
+  },
+  {
+    "id": 60,
+    "question": "Which of the following teams is responsible for providing additional support and resources as needed?",
+    "options": ["Extended team", "Governance team", "Agile team", "Core team"],
+    "answer": "Extended team"
+  },
+  {
+    "id": 61,
+    "question": "Which of the following teams provides strategic direction for the entire team?",
+    "options": ["Agile team", "Extended team", "Governance team", "Core team"],
+    "answer": "Governance team"
+  },
+  {
+    "id": 62,
+    "question": "Puran helps the team by removing obstacles, making sure they can choose their own tasks, and encouraging them to work better together. What is Puran's role?",
+    "options": ["Iteration manager", "Stakeholder", "Subject matter expert", "Product owner"],
+    "answer": "Iteration manager"
+  },
+  {
+    "id": 63,
+    "question": "Robert is in a group that meets to make big decisions about a project. They check the project plan, track progress, and decide if the project is still a good idea. What is Robert's role?",
+    "options": ["Sponsor", "Stakeholder", "Product owner", "Steering committee member"],
+    "answer": "Steering committee member"
+  },
+  {
+    "id": 64,
+    "question": "Leslie ensures that her team members only start new tasks once they have completed their current ones, rather than continuously receiving new tasks. Which principle of the Kanban method is Leslie applying?",
+    "options": ["Improve collaboratively", "Limit WIP", "Visualize the work", "Manage flow"],
+    "answer": "Limit WIP"
+  },
+  {
+    "id": 65,
+    "question": "Which of the following principles emphasizes controlling the number of ongoing tasks?",
+    "options": ["Make process policies explicit", "Limit WIP", "Manage flow", "Visualize the work"],
+    "answer": "Limit WIP"
+  },
+  {
+    "id": 66,
+    "question": "Gian is leading a team and makes sure that all the rules and guidelines for the project are clearly written down and displayed where everyone can see them. Which principle of the Kanban method is Gian applying?",
+    "options": ["Visualize the work", "Improve collaboratively", "Make process policies explicit", "Manage flow"],
+    "answer": "Make process policies explicit"
+  },
+  {
+    "id": 67,
+    "question": "Which of the following statements is false about the pull system for workflow processing?",
+    "options": [
+      "Lead times become more predictable.",
+      "Overburdening is eliminated.",
+      "WIP limits manage the workflow.",
+      "Managers pull the work for the team."
+    ],
+    "answer": "Managers pull the work for the team."
+  },
+  {
+    "id": 68,
+    "question": "Which of the following principles emphasizes making small, gradual adjustments over time to refine processes?",
+    "options": ["Manage flow", "Improve collaboratively", "Make process policies explicit", "Visualize the work"],
+    "answer": "Improve collaboratively"
+  },
+  {
+    "id": 69,
+    "question": "Which of the following statements is true about stand-ups in operations work?",
+    "options": [
+      "Stand-ups must be conducted every day.",
+      "Stand-ups are not needed in operations work.",
+      "Stand-ups are run by the manager.",
+      "Stand-ups are typically done once a month."
+    ],
+    "answer": "Stand-ups must be conducted every day."
+  },
+  {
+    "id": 70,
+    "question": "On a core team, who has more experience and can assist the other team members with the content?",
+    "options": ["Subject matter expert", "Iteration manager", "Change manager", "Stakeholder"],
+    "answer": "Subject matter expert"
+  },
+  {
+    "id": 71,
+    "question": "Your team has just completed gathering all the incoming requests for system improvements. What is the next step to ensure these requests are handled appropriately?",
+    "options": [
+      "Communicate the requests to the development team.",
+      "Prioritize the requests based on urgency and impact.",
+      "Review the requests with stakeholders.",
+      "Implement the improvements immediately."
+    ],
+    "answer": "Prioritize the requests based on urgency and impact."
+  },
+  {
+    "id": 72,
+    "question": "In Agile teams, what does it mean to be 'cross-functional'?",
+    "options": [
+      "Team members are all from the same department and have similar skills.",
+      "Team members focus on one type of task or skill.",
+      "Team members come from various departments and have a variety of skills.",
+      "Team members rotate through different roles every week."
+    ],
+    "answer": "Team members come from various departments and have a variety of skills."
+  },
+  {
+    "id": 73,
+    "question": "Fill in the blanks: ____________ work refers to managing ongoing, routine tasks necessary for daily functioning, while ____________ work involves coordinating specific projects to achieve strategic goals.",
+    "options": ["Program, operations", "Operations, Agile", "Operations, program", "Agile, program"],
+    "answer": "Operations, program"
+  },
+  {
+    "id": 74,
+    "question": "Which of the following statements is true about bottlenecks in the operations pattern?",
+    "options": [
+      "Once a bottleneck is resolved, no new bottlenecks will appear.",
+      "Teams and leaders can decide where the bottleneck occurs to improve efficiency.",
+      "Bottlenecks can be removed from the process.",
+      "Bottlenecks have no impact on the delivery speed of the process."
+    ],
+    "answer": "Teams and leaders can decide where the bottleneck occurs to improve efficiency."
+  },
+  {
+    "id": 75,
+    "question": "Your team gets together and decides to create a schedule for the next two weeks, planning what each member can commit to completing. Which Agile practice did the team incorporate?",
+    "options": ["Wall of work", "Retrospective", "Iterations", "Social contract"],
+    "answer": "Iterations"
+  },
+  {
+    "id": 76,
+    "question": "Your family sits down to talk about ways to get chores done more quickly and decides to hire a helper to come in once a week. What did your family take part in?",
+    "options": ["Bottleneck work", "Continuous improvement", "Operations funnel", "Social contract"],
+    "answer": "Continuous improvement"
+  },
+  {
+    "id": 77,
+    "question": "Your teacher gives you a group assignment. You meet with the team to figure out what tasks need to be completed. What should you do next?",
+    "options": [
+      "Complete the longest tasks first to get them out of the way.",
+      "Prioritize the tasks to focus on the most important ones first.",
+      "Start working on the easiest tasks first.",
+      "Start working on all tasks at once to finish faster."
+    ],
+    "answer": "Prioritize the tasks to focus on the most important ones first."
+  },
+  {
+    "id": 78,
+    "question": "What is the correct sequence of phases to implement the operations pattern?",
+    "options": [
+      "Request, prioritization, operations funnel, and delivery",
+      "Operations funnel, request, prioritization, and delivery",
+      "Prioritization, delivery, operations funnel, and request",
+      "Request, operations funnel, prioritization, and delivery"
+    ],
+    "answer": "Request, prioritization, operations funnel, and delivery"
+  },
+  {
+    "id": 79,
+    "question": "Which of the following teams has members who do the bulk of the work?",
+    "options": ["Core team", "Agile team", "Extended team", "Governance team"],
+    "answer": "Core team"
+  },
+  {
+    "id": 80,
+    "question": "Which of the following is true about a wall of work?",
+    "options": [
+      "A wall of work, at a minimum, has three columns: to do, in progress, and done.",
+      "A wall of work is updated every month.",
+      "Each work card on the wall of work should have a minimum of three tasks noted on it.",
+      "A wall of work is managed by the team's manager."
+    ],
+    "answer": "A wall of work, at a minimum, has three columns: to do, in progress, and done."
+  },
+  {
+    "id": 81,
+    "question": "Which of the following is a key characteristic of operations work?",
+    "options": [
+      "Involves managing multiple projects with a defined start and end date",
+      "Starts with initiation and ends with completion when the objectives are met",
+      "Includes planning and executing initiatives with set milestones",
+      "Focuses on ongoing, routine tasks necessary for daily functioning"
+    ],
+    "answer": "Focuses on ongoing, routine tasks necessary for daily functioning"
+  },
+  {
+    "id": 82,
+    "question": "Which of the following is an example of operations work?",
+    "options": [
+      "Redesigning a product interface",
+      "Setting up a new project management tool",
+      "Conducting daily system health checks",
+      "Developing a new marketing strategy for a product launch"
+    ],
+    "answer": "Conducting daily system health checks"
+  },
+  {
+    "id": 83,
+    "question": "Which of the following is a question asked by the team to complete a retrospective?",
+    "options": [
+      "Who made the mistake?",
+      "Did we meet deadlines?",
+      "What went well?",
+      "Did everyone contribute equally?"
+    ],
+    "answer": "What went well?"
+  }
+]
