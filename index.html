@@ -80,7 +80,7 @@
     .info-item .val { font-size: .9rem; font-weight: 600; color: #1d2125; }
 
     /* ── Quiz Screen ── */
-    .quiz-wrap { max-width: 1000px; margin: 0 auto; padding: 14px 16px; }
+    .quiz-wrap { width: 100%; padding: 14px 16px; }
     .breadcrumb {
       font-size: .78rem; color: #5b6168; margin-bottom: 12px;
     }
@@ -163,12 +163,13 @@
 
     /* Nav buttons */
     .bottom-nav {
-      display: flex; justify-content: space-between;
-      align-items: center; margin-top: 12px;
-      /* subtract sidebar width + gap so it lines up under the question card */
-      padding-right: 214px;
+      display: grid;
+      grid-template-columns: 1fr 200px;
+      gap: 14px;
+      margin-top: 12px;
     }
-    .bottom-nav-right { display: flex; gap: 8px; margin-left: auto; }
+    .bottom-nav-left  { display: flex; align-items: center; justify-content: space-between; }
+    .bottom-nav-right { display: flex; gap: 8px; align-items: center; }
 
     /* ── Sidebar ── */
     .sidebar { background: #fff; border: 1px solid #dee2e6; border-radius: 3px; }
@@ -273,7 +274,7 @@
 
     @media (max-width: 640px) {
       .quiz-layout { grid-template-columns: 1fr; }
-      .bottom-nav  { padding-right: 0; }
+      .bottom-nav  { grid-template-columns: 1fr; }
       .sidebar     { order: -1; }
       .nav-grid    { grid-template-columns: repeat(8, 1fr); }
     }
@@ -355,11 +356,14 @@
 
     <!-- Bottom nav -->
     <div class="bottom-nav">
-      <button class="btn btn-outline" id="btn-prev" onclick="prevQuestion()" style="display:none;">&#8592; Previous page</button>
-      <div class="bottom-nav-right">
-        <button class="btn btn-primary" id="btn-submit" onclick="submitAnswer()" disabled>Confirm answer</button>
-        <button class="btn btn-outline" id="btn-next" onclick="nextQuestion()" style="display:none;">Next page &#8594;</button>
+      <div class="bottom-nav-left">
+        <button class="btn btn-outline" id="btn-prev" onclick="prevQuestion()" style="display:none;">&#8592; Previous page</button>
+        <div class="bottom-nav-right">
+          <button class="btn btn-primary" id="btn-submit" onclick="submitAnswer()" disabled>Confirm answer</button>
+          <button class="btn btn-outline" id="btn-next" onclick="nextQuestion()" style="display:none;">Next page &#8594;</button>
+        </div>
       </div>
+      <div></div>
     </div>
   </div>
 </div>
