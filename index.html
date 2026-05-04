@@ -9,306 +9,411 @@
 
     body {
       font-family: 'Segoe UI', system-ui, sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
+      background: #f1f2f4;
+      color: #1d2125;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
     }
 
-    .screen { display: none; width: 100%; max-width: 720px; }
+    .screen { display: none; }
     .screen.active { display: block; }
+
+    /* ── Moodle Nav ── */
+    .moodle-nav {
+      background: #fff;
+      border-bottom: 1px solid #dee2e6;
+      padding: 8px 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 4px rgba(0,0,0,.07);
+    }
+    .moodle-logo { font-weight: 700; font-size: 1.05rem; color: #0f6cbf; }
+    .moodle-nav-links { display: flex; gap: 16px; font-size: .83rem; color: #5b6168; }
+    .moodle-nav-links span:hover { color: #0f6cbf; cursor: pointer; }
+    .user-avatar {
+      margin-left: auto;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: #0f6cbf;
+      color: #fff;
+      font-size: .72rem;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
 
     /* ── Start Screen ── */
     #start-screen {
+      display: flex; align-items: center; justify-content: center;
+      min-height: calc(100vh - 49px);
+      padding: 2rem;
+    }
+    .start-card {
+      background: #fff;
+      border: 1px solid #dee2e6;
+      border-radius: 4px;
+      padding: 2.5rem 2rem;
+      max-width: 480px; width: 100%;
       text-align: center;
-      background: #1e293b;
-      border-radius: 1.25rem;
-      padding: 3rem 2rem;
-      box-shadow: 0 20px 60px rgba(0,0,0,.4);
+      box-shadow: 0 2px 8px rgba(0,0,0,.07);
     }
-    #start-screen h1 { font-size: 2rem; font-weight: 700; color: #f8fafc; margin-bottom: .5rem; }
-    #start-screen p  { color: #94a3b8; margin-bottom: 2rem; line-height: 1.6; }
-    .badge {
-      display: inline-block;
-      background: #1d4ed8;
-      color: #bfdbfe;
-      font-size: .75rem;
-      font-weight: 600;
-      padding: .25rem .75rem;
-      border-radius: 9999px;
-      margin-bottom: 1.25rem;
-      letter-spacing: .05em;
-      text-transform: uppercase;
+    .start-badge {
+      font-size: .72rem; font-weight: 700; color: #0f6cbf;
+      text-transform: uppercase; letter-spacing: .08em;
+      margin-bottom: .6rem;
     }
+    .start-card h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: .4rem; }
+    .start-card p  { color: #5b6168; font-size: .875rem; line-height: 1.6; margin-bottom: 1.5rem; }
+    .info-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 10px; margin-bottom: 1.5rem; text-align: left;
+    }
+    .info-item {
+      background: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 3px;
+      padding: 9px 12px;
+    }
+    .info-item .lbl { font-size: .7rem; font-weight: 700; color: #5b6168; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 2px; }
+    .info-item .val { font-size: .9rem; font-weight: 600; color: #1d2125; }
 
     /* ── Quiz Screen ── */
-    #quiz-screen {
-      background: #1e293b;
-      border-radius: 1.25rem;
-      padding: 2rem;
-      box-shadow: 0 20px 60px rgba(0,0,0,.4);
+    .quiz-wrap { max-width: 1000px; margin: 0 auto; padding: 14px 16px; }
+    .breadcrumb {
+      font-size: .78rem; color: #5b6168; margin-bottom: 12px;
+    }
+    .breadcrumb a { color: #0f6cbf; cursor: pointer; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    .quiz-layout {
+      display: grid;
+      grid-template-columns: 1fr 200px;
+      gap: 14px;
+      align-items: start;
     }
 
-    .quiz-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.25rem;
-      flex-wrap: wrap;
-      gap: .5rem;
+    /* Question card */
+    .q-card { background: #fff; border: 1px solid #dee2e6; border-radius: 3px; }
+    .q-card-head {
+      background: #f8f9fa;
+      border-bottom: 1px solid #dee2e6;
+      display: flex; align-items: stretch; flex-wrap: wrap;
     }
-    .question-counter { font-size: .875rem; color: #94a3b8; font-weight: 500; }
-    .score-badge {
-      font-size: .875rem;
-      background: #0f172a;
-      padding: .25rem .75rem;
-      border-radius: 9999px;
-      color: #38bdf8;
-      font-weight: 600;
-    }
+    .qh { padding: 6px 12px; font-size: .78rem; color: #5b6168; border-right: 1px solid #dee2e6; display: flex; align-items: center; }
+    .qh.qh-num { font-weight: 600; color: #1d2125; }
+    .qh.qh-flag { margin-left: auto; color: #0f6cbf; cursor: pointer; border-right: none; user-select: none; }
+    .qh.qh-flag:hover { text-decoration: underline; }
+    .qh.qh-flag.flagged { color: #dc2626; }
 
-    .progress-bar {
-      background: #0f172a;
-      border-radius: 9999px;
-      height: 6px;
-      margin-bottom: 1.75rem;
-      overflow: hidden;
-    }
-    .progress-fill {
-      background: linear-gradient(90deg, #3b82f6, #818cf8);
-      height: 100%;
-      border-radius: 9999px;
-      transition: width .4s ease;
-    }
-
-    .question-text {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: #f1f5f9;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-
+    .q-body { padding: 16px 18px; }
+    .q-text { font-size: .93rem; font-weight: 500; line-height: 1.65; margin-bottom: 14px; color: #1d2125; }
     .multi-hint {
-      font-size: .8rem;
-      color: #f59e0b;
-      margin-bottom: 1rem;
-      font-weight: 500;
+      font-size: .78rem; font-weight: 600; color: #92400e;
+      background: #fef3c7; border: 1px solid #fcd34d;
+      border-radius: 3px; padding: 4px 10px; margin-bottom: 12px;
     }
-
-    .options { display: flex; flex-direction: column; gap: .75rem; margin-bottom: 1.75rem; }
-
+    .options { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
     .option {
-      display: flex;
-      align-items: flex-start;
-      gap: .875rem;
-      padding: .875rem 1rem;
-      border: 2px solid #334155;
-      border-radius: .75rem;
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid #dee2e6;
+      border-radius: 3px;
       cursor: pointer;
-      transition: border-color .2s, background .2s;
-      background: #0f172a;
+      transition: border-color .15s, background .15s;
+      background: #fff;
     }
-    .option:hover { border-color: #3b82f6; background: #1e3a5f20; }
-    .option.selected { border-color: #3b82f6; background: #1d4ed820; }
-    .option.correct  { border-color: #22c55e; background: #14532d30; }
-    .option.wrong    { border-color: #ef4444; background: #7f1d1d30; }
-    .option.reveal-correct { border-color: #22c55e; background: #14532d30; }
+    .option:hover:not(.disabled) { border-color: #0f6cbf; background: #f0f7ff; }
+    .option.selected     { border-color: #0f6cbf; background: #ebf2fb; }
+    .option.correct      { border-color: #16a34a; background: #f0fdf4; }
+    .option.wrong        { border-color: #dc2626; background: #fef2f2; }
+    .option.reveal-correct { border-color: #16a34a; background: #f0fdf4; }
+    .option.disabled     { cursor: default; }
+    .option input        { display: none; }
+    .option-letter {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: #f0f2f5;
+      color: #5b6168;
+      font-size: .72rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: background .15s, color .15s;
+    }
+    .option.selected .option-letter     { background: #0f6cbf; color: #fff; }
+    .option.correct .option-letter      { background: #16a34a; color: #fff; }
+    .option.wrong .option-letter        { background: #dc2626; color: #fff; }
+    .option.reveal-correct .option-letter { background: #16a34a; color: #fff; }
+    .option label { cursor: pointer; font-size: .875rem; line-height: 1.5; flex: 1; }
+    .option.disabled label { cursor: default; }
 
-    .option input { flex-shrink: 0; margin-top: 2px; accent-color: #3b82f6; width: 16px; height: 16px; cursor: pointer; }
-    .option label { cursor: pointer; color: #cbd5e1; font-size: .95rem; line-height: 1.5; }
-    .option.selected label, .option.correct label, .option.reveal-correct label { color: #f1f5f9; }
-
-    .actions {
-      display: flex;
-      gap: .75rem;
-      flex-wrap: wrap;
+    .q-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 4px; }
+    .clear-btn {
+      background: #fff; border: 1px solid #0f6cbf;
+      color: #0f6cbf; padding: 3px 10px;
+      border-radius: 3px; font-size: .78rem; cursor: pointer;
+    }
+    .clear-btn:hover { background: #f0f7ff; }
+    .r-hint { font-size: .7rem; color: #9ca3af; }
+    .r-hint kbd {
+      background: #f8f9fa; border: 1px solid #dee2e6;
+      border-radius: 2px; padding: 0 5px;
+      font-size: .68rem; font-family: monospace;
     }
 
+    /* Nav buttons */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      align-items: center; margin-top: 12px;
+      /* subtract sidebar width + gap so it lines up under the question card */
+      padding-right: 214px;
+    }
+    .bottom-nav-right { display: flex; gap: 8px; margin-left: auto; }
+
+    /* ── Sidebar ── */
+    .sidebar { background: #fff; border: 1px solid #dee2e6; border-radius: 3px; }
+    .sidebar-head { background: #f8f9fa; border-bottom: 1px solid #dee2e6; padding: 6px 10px; font-size: .8rem; font-weight: 600; }
+    .nav-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; padding: 8px; }
+    .nav-num {
+      aspect-ratio: 1;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .72rem; font-weight: 500;
+      border: 1px solid #ced4da;
+      border-radius: 2px;
+      cursor: pointer; background: #fff; color: #1d2125;
+      transition: border-color .12s;
+    }
+    .nav-num:hover           { border-color: #0f6cbf; color: #0f6cbf; }
+    .nav-num.nav-answered    { background: #495057; color: #fff; border-color: #495057; }
+    .nav-num.nav-current     { border: 2px solid #0f6cbf; color: #0f6cbf; font-weight: 700; background: #fff; }
+    .nav-num.nav-flagged     { border-color: #dc2626 !important; }
+
+    .sidebar-finish {
+      border-top: 1px solid #dee2e6;
+      padding: 6px 10px;
+      font-size: .8rem; color: #0f6cbf; cursor: pointer;
+    }
+    .sidebar-finish:hover { text-decoration: underline; }
+
+    .sidebar-timer { padding: 8px 10px; border-top: 1px solid #dee2e6; }
+    .timer-lbl { font-size: .72rem; font-weight: 700; color: #1d2125; margin-bottom: 2px; }
+    .timer-val { font-family: 'Courier New', monospace; font-size: .95rem; font-weight: 700; color: #1d2125; }
+    .timer-val.warn { color: #dc2626; }
+
+    /* ── Buttons ── */
     .btn {
-      flex: 1;
-      min-width: 120px;
-      padding: .75rem 1.25rem;
-      border: none;
-      border-radius: .75rem;
-      font-size: .95rem;
-      font-weight: 600;
+      padding: 6px 14px;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      font-size: .83rem; font-weight: 600;
       cursor: pointer;
-      transition: opacity .2s, transform .1s;
+      transition: background .15s, opacity .15s;
     }
-    .btn:hover { opacity: .9; }
-    .btn:active { transform: scale(.97); }
     .btn:disabled { opacity: .4; cursor: not-allowed; }
+    .btn-primary  { background: #0f6cbf; color: #fff; border-color: #0f6cbf; }
+    .btn-primary:hover:not(:disabled) { background: #0d5fa8; }
+    .btn-outline  { background: #fff; color: #0f6cbf; border-color: #0f6cbf; }
+    .btn-outline:hover:not(:disabled) { background: #f0f7ff; }
+    .btn-danger   { background: #dc2626; color: #fff; border-color: #dc2626; }
+    .btn-danger:hover { background: #b91c1c; }
 
-    .btn-primary { background: linear-gradient(135deg, #3b82f6, #6366f1); color: #fff; }
-    .btn-danger  { background: #991b1b; color: #fecaca; }
-    .btn-neutral { background: #334155; color: #cbd5e1; }
+    /* ── Results Screen ── */
+    .results-wrap { max-width: 760px; margin: 0 auto; padding: 14px 16px; }
+    .r-card { background: #fff; border: 1px solid #dee2e6; border-radius: 3px; margin-bottom: 14px; }
+    .r-card-head { background: #f8f9fa; border-bottom: 1px solid #dee2e6; padding: 7px 14px; font-size: .85rem; font-weight: 600; }
+    .r-card-body { padding: 16px; }
 
-    /* ── Fixed Stop Button ── */
-    #btn-stop {
-      position: fixed;
-      top: 1.1rem;
-      right: 1.1rem;
-      z-index: 999;
-      padding: .5rem 1rem;
-      font-size: .8rem;
-      font-weight: 700;
-      border: none;
-      border-radius: .6rem;
-      background: #7f1d1d;
-      color: #fca5a5;
-      cursor: pointer;
-      letter-spacing: .04em;
-      box-shadow: 0 4px 14px rgba(0,0,0,.4);
-      transition: background .2s, transform .1s;
+    .score-row { display: flex; align-items: center; gap: 20px; }
+    .score-circle {
+      width: 80px; height: 80px; border-radius: 50%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      flex-shrink: 0; font-weight: 700; color: #fff;
     }
-    #btn-stop:hover  { background: #991b1b; }
-    #btn-stop:active { transform: scale(.95); }
+    .score-circle .big { font-size: 1.4rem; line-height: 1; }
+    .score-circle .sub { font-size: .62rem; opacity: .85; margin-top: 2px; }
+    .sc-great { background: #16a34a; }
+    .sc-good  { background: #0f6cbf; }
+    .sc-ok    { background: #d97706; }
+    .sc-poor  { background: #dc2626; }
 
-    /* ── R-key hint ── */
-    .r-hint {
-      font-size: .72rem;
-      color: #475569;
-      text-align: right;
-      margin-top: -.5rem;
-      margin-bottom: 1rem;
-      user-select: none;
+    .score-info h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: .25rem; }
+    .score-info p  { font-size: .85rem; color: #5b6168; }
+
+    .review-list { display: flex; flex-direction: column; gap: 10px; }
+    .rv-card {
+      border: 1px solid #dee2e6;
+      border-left: 4px solid #dee2e6;
+      border-radius: 3px;
+      padding: 12px 14px;
+      background: #fff;
     }
+    .rv-card.ok  { border-left-color: #16a34a; }
+    .rv-card.bad { border-left-color: #dc2626; }
+    .rv-qnum { font-size: .7rem; color: #9ca3af; font-weight: 700; text-transform: uppercase; margin-bottom: .3rem; }
+    .rv-q    { font-size: .875rem; font-weight: 600; line-height: 1.5; margin-bottom: .5rem; }
+    .rv-row  { display: flex; gap: .5rem; font-size: .82rem; margin-top: 4px; }
+    .rv-lbl  { font-weight: 600; min-width: 90px; flex-shrink: 0; }
+    .rv-lbl.yours   { color: #5b6168; }
+    .rv-lbl.correct { color: #16a34a; }
+    .rv-val  { color: #374151; line-height: 1.5; }
 
-    /* ── Glow on R ── */
+    .results-actions { display: flex; gap: 10px; margin-top: 14px; }
+
+    /* Glow */
     @keyframes glow-pulse {
-      0%   { box-shadow: 0 0 0px  0px #22c55e88; }
-      50%  { box-shadow: 0 0 18px 6px #22c55ecc; }
-      100% { box-shadow: 0 0 6px  2px #22c55e66; }
+      0%   { box-shadow: 0 0 0   0   #16a34a88; }
+      50%  { box-shadow: 0 0 14px 4px #16a34acc; }
+      100% { box-shadow: 0 0 5px  2px #16a34a66; }
     }
     .option.glow {
-      border-color: #22c55e !important;
-      background: #14532d40 !important;
+      border-color: #16a34a !important;
+      background: #f0fdf4 !important;
       animation: glow-pulse .6s ease forwards;
     }
 
-    /* ── Results Screen ── */
-    #results-screen {
-      background: #1e293b;
-      border-radius: 1.25rem;
-      padding: 2rem;
-      box-shadow: 0 20px 60px rgba(0,0,0,.4);
+    @media (max-width: 640px) {
+      .quiz-layout { grid-template-columns: 1fr; }
+      .bottom-nav  { padding-right: 0; }
+      .sidebar     { order: -1; }
+      .nav-grid    { grid-template-columns: repeat(8, 1fr); }
     }
-
-    .results-header { text-align: center; margin-bottom: 2rem; }
-    .results-header h2 { font-size: 1.75rem; font-weight: 700; color: #f8fafc; margin-bottom: .5rem; }
-
-    .score-circle {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin: 1.25rem auto;
-      font-weight: 700;
-    }
-    .score-circle .big  { font-size: 2rem; line-height: 1; }
-    .score-circle .sub  { font-size: .75rem; color: #94a3b8; margin-top: .25rem; }
-
-    .score-great  { background: #14532d; border: 3px solid #22c55e; color: #86efac; }
-    .score-good   { background: #1e3a5f; border: 3px solid #3b82f6; color: #93c5fd; }
-    .score-ok     { background: #451a03; border: 3px solid #f59e0b; color: #fcd34d; }
-    .score-poor   { background: #7f1d1d; border: 3px solid #ef4444; color: #fca5a5; }
-
-    .review-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
-
-    .review-card {
-      background: #0f172a;
-      border-radius: .75rem;
-      padding: 1rem 1.25rem;
-      border-left: 4px solid #334155;
-    }
-    .review-card.correct-card  { border-left-color: #22c55e; }
-    .review-card.wrong-card    { border-left-color: #ef4444; }
-
-    .review-qnum { font-size: .75rem; color: #64748b; font-weight: 600; text-transform: uppercase; margin-bottom: .35rem; }
-    .review-question { font-size: .9rem; color: #e2e8f0; font-weight: 600; margin-bottom: .75rem; line-height: 1.5; }
-
-    .review-answers { display: flex; flex-direction: column; gap: .35rem; }
-    .review-row { display: flex; gap: .5rem; align-items: flex-start; font-size: .85rem; }
-    .review-label { flex-shrink: 0; font-weight: 600; min-width: 80px; }
-    .review-label.yours   { color: #94a3b8; }
-    .review-label.correct { color: #22c55e; }
-    .review-val { color: #cbd5e1; line-height: 1.5; }
-    .tick  { color: #22c55e; font-size: 1rem; margin-right: .25rem; }
-    .cross { color: #ef4444; font-size: 1rem; margin-right: .25rem; }
-
-    .results-actions { display: flex; gap: .75rem; flex-wrap: wrap; }
-    .results-actions .btn { flex: 1; min-width: 140px; }
   </style>
 </head>
 <body>
 
+<!-- Moodle nav -->
+<nav class="moodle-nav">
+  <div class="moodle-logo">moodle</div>
+  <div class="moodle-nav-links">
+    <span>My courses</span>
+    <span>Site home</span>
+    <span>Calendar</span>
+  </div>
+  <div class="user-avatar">SK</div>
+</nav>
+
 <!-- ── Start Screen ── -->
 <div id="start-screen" class="screen active">
-  <span class="badge">Agile Fundamentals</span>
-  <h1>Agile Quiz</h1>
-  <p>Test your knowledge of Agile values, principles, and practices.<br>
-     Questions are shuffled each time. You can stop at any point after Q1 and review your results.</p>
-  <button class="btn btn-primary" onclick="startQuiz()" style="max-width:200px;margin:0 auto;display:block;">
-    Start Quiz
-  </button>
+  <div style="display:flex;align-items:center;justify-content:center;min-height:calc(100vh - 49px);padding:2rem;">
+    <div class="start-card">
+      <div class="start-badge">Agile Fundamentals</div>
+      <h1>Agile Quiz</h1>
+      <p>Test your knowledge of Agile values, principles, and practices.<br>Questions are shuffled each session.</p>
+      <div class="info-grid">
+        <div class="info-item"><div class="lbl">Questions</div><div class="val">83</div></div>
+        <div class="info-item"><div class="lbl">Time limit</div><div class="val">30 min</div></div>
+        <div class="info-item"><div class="lbl">Attempts</div><div class="val">Unlimited</div></div>
+        <div class="info-item"><div class="lbl">Grading</div><div class="val">Highest grade</div></div>
+      </div>
+      <button class="btn btn-primary" onclick="startQuiz()" style="width:100%;padding:.75rem;font-size:.95rem;">
+        Start quiz
+      </button>
+    </div>
+  </div>
 </div>
-
-<!-- ── Fixed Stop Button (always on top-right during quiz) ── -->
-<button id="btn-stop" onclick="finishQuiz()" style="display:none;">Stop Quiz</button>
 
 <!-- ── Quiz Screen ── -->
 <div id="quiz-screen" class="screen">
-  <div class="quiz-header">
-    <span class="question-counter" id="q-counter">Question 1</span>
-    <span class="score-badge" id="score-display">Score: 0</span>
-  </div>
-  <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
-  <div class="question-text" id="question-text"></div>
-  <div class="multi-hint" id="multi-hint" style="display:none;">Select all that apply</div>
-  <div class="r-hint" id="r-hint" style="display:none;">press <kbd style="background:#1e293b;border:1px solid #334155;border-radius:3px;padding:0 4px;font-size:.7rem;">R</kbd> to reveal answer</div>
-  <div class="options" id="options-container"></div>
-  <div class="actions">
-    <button class="btn btn-primary" id="btn-submit" onclick="submitAnswer()" disabled>Confirm</button>
-    <button class="btn btn-neutral" id="btn-next"   onclick="nextQuestion()" style="display:none;">Next</button>
+  <div class="quiz-wrap">
+    <div class="breadcrumb">
+      <a onclick="finishQuiz()">Agile Fundamentals</a> / Agile Quiz / Attempt
+    </div>
+
+    <div class="quiz-layout">
+      <!-- Question card -->
+      <div class="q-card">
+        <div class="q-card-head">
+          <div class="qh qh-num" id="qh-num">Question 1</div>
+          <div class="qh" id="qh-status">Not yet answered</div>
+          <div class="qh">Marked out of 1.00</div>
+          <div class="qh qh-flag" id="flag-btn" onclick="toggleFlag()">⚑ Flag question</div>
+        </div>
+        <div class="q-body">
+          <div class="q-text" id="question-text"></div>
+          <div class="multi-hint" id="multi-hint" style="display:none;">Select all that apply</div>
+          <div class="options" id="options-container"></div>
+          <div class="q-footer">
+            <button class="clear-btn" id="clear-btn" onclick="clearChoice()" style="display:none;">Clear my choice</button>
+            <div class="r-hint" id="r-hint" style="display:none;">
+              press <kbd>R</kbd> to reveal answer
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="sidebar-head">Quiz navigation</div>
+        <div class="nav-grid" id="nav-grid"></div>
+        <div class="sidebar-finish" onclick="finishQuiz()">Finish attempt ...</div>
+        <div class="sidebar-timer">
+          <div class="timer-lbl">Time left</div>
+          <div class="timer-val" id="timer-val">30:00</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom nav -->
+    <div class="bottom-nav">
+      <button class="btn btn-outline" id="btn-prev" onclick="prevQuestion()" style="display:none;">&#8592; Previous page</button>
+      <div class="bottom-nav-right">
+        <button class="btn btn-primary" id="btn-submit" onclick="submitAnswer()" disabled>Confirm answer</button>
+        <button class="btn btn-outline" id="btn-next" onclick="nextQuestion()" style="display:none;">Next page &#8594;</button>
+      </div>
+    </div>
   </div>
 </div>
 
 <!-- ── Results Screen ── -->
 <div id="results-screen" class="screen">
-  <div class="results-header">
-    <h2>Quiz Results</h2>
-    <div class="score-circle" id="score-circle">
-      <span class="big" id="score-pct"></span>
-      <span class="sub"  id="score-frac"></span>
+  <div class="results-wrap">
+    <div class="breadcrumb">
+      <a onclick="restartQuiz()">Agile Fundamentals</a> / Agile Quiz / Results
     </div>
-    <p id="score-msg" style="color:#94a3b8;font-size:.9rem;"></p>
-  </div>
-  <div class="review-list" id="review-list"></div>
-  <div class="results-actions">
-    <button class="btn btn-neutral" onclick="restartQuiz()">Restart</button>
-    <button class="btn btn-primary" onclick="scrollToTop()">Back to Top</button>
+
+    <div class="r-card">
+      <div class="r-card-head">Quiz summary — Agile Quiz</div>
+      <div class="r-card-body">
+        <div class="score-row">
+          <div class="score-circle" id="score-circle">
+            <span class="big" id="score-pct"></span>
+            <span class="sub"  id="score-frac"></span>
+          </div>
+          <div class="score-info">
+            <h2 id="score-msg"></h2>
+            <p  id="score-sub"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="r-card">
+      <div class="r-card-head">Review your answers</div>
+      <div class="r-card-body">
+        <div class="review-list" id="review-list"></div>
+      </div>
+    </div>
+
+    <div class="results-actions">
+      <button class="btn btn-outline" onclick="restartQuiz()">Re-attempt quiz</button>
+      <button class="btn btn-primary" onclick="scrollToTop()">Back to top</button>
+    </div>
   </div>
 </div>
 
 <script>
-// ── Data ──────────────────────────────────────────────────────────────────────
 const ALL_QUESTIONS = [{"id":1,"question":"John stands up to voice his differing opinion during a critical meeting, despite knowing it might be unpopular. What Agile value is John demonstrating?","options":["Empathy","Respect","Trust","Courage"],"answer":"Courage"},{"id":2,"question":"During a team meeting, Nora realizes that she made an error in a report. She openly acknowledges her mistake and explains what went wrong. What Agile value is Nora demonstrating?","options":["Empathy","Openness","Trust","Respect"],"answer":"Trust"},{"id":3,"question":"During a team discussion about a new project, Jagdish values the input of all team members equally and encourages diverse thinking. What Agile value is Jagdish demonstrating?","options":["Respect","Courage","Empathy","Trust"],"answer":"Respect"},{"id":4,"question":"Which of the following principles emphasizes the importance of groups that are empowered to manage their own work?","options":["Self-directed teams","Clarity of outcome","Iteration and learning"],"answer":"Self-directed teams"},{"id":5,"question":"Jordan and his friends are planning a camping trip. Jordan starts by clearly defining the goal of the trip, which is to have a relaxing and enjoyable experience. Throughout the planning process, Jordan ensures that every decision aligns with this goal. Which Agile principle is Jordan applying?","options":["Clarity of outcome","Iteration and learning","Self-directed teams"],"answer":"Clarity of outcome"},{"id":6,"question":"What is the correct sequence of steps to act on the clarity of outcome principle?","options":["Define the problem, keep the user outcome in sight, and determine the user outcome","Define the problem, determine the user outcome, and keep the user outcome in sight","Keep the user outcome in sight, define the problem, and determine the user outcome","Determine the user outcome, define the problem, and keep the user outcome in sight"],"answer":"Define the problem, determine the user outcome, and keep the user outcome in sight"},{"id":7,"question":"What is the first step to act on the iteration and learning principle?","options":["Listen and learn from feedback received.","Start by doing and trying small pieces of work.","Course correct as necessary to meet user outcomes.","Iterate by making adjustments based on feedback received."],"answer":"Start by doing and trying small pieces of work."},{"id":8,"question":"John is preparing a new recipe for a community potluck. After cooking a small batch, he shares it with his friends. They taste it and provide their feedback. What should be John's next step to ensure the recipe is well-received at the potluck?","options":["Test the recipe with a different group of friends for more feedback.","Adjust the recipe based on the feedback.","Serve the dish as it is and make a note for future improvements.","Document the feedback and plan to try a different recipe."],"answer":"Adjust the recipe based on the feedback."},{"id":9,"question":"Noelle is the leader of her school's event planning committee. She wants to ensure that her team can keep track of progress on various tasks. Which of the following Agile practices can help Noelle achieve this?","options":["Retrospective","Wall of work","Social contract","Mood marbles"],"answer":"Wall of work"},{"id":10,"question":"Shifa wants to gauge the emotional well-being of her team members. Which of the following Agile practices can help Shifa achieve this?","options":["Social contract","Shuhari","Mood marbles","Showcase"],"answer":"Mood marbles"},{"id":11,"question":"Gurpreet is part of a team that meets every morning to discuss their progress and plans. Each team member shares their accomplishments, focus for the day, and any challenges. Which Agile practice is Gurpreet and his team implementing?","options":["Stand-up","Retrospective","Showcase","Shuhari"],"answer":"Stand-up"},{"id":12,"question":"After gathering everyone for a stand-up meeting, what is the next step?","options":["Assign new tasks to team members.","Have team members give their status updates.","Note any meetings that need to be scheduled.","Review and adjust the project's timeline."],"answer":"Have team members give their status updates."},{"id":13,"question":"In which Shuhari stage do you move away from traditional methods, develop a new approach, and teach it to others?","options":["Ha","Ri","Shu"],"answer":"Ri"},{"id":14,"question":"During a team meeting, Maxim introduces mood marbles and asks each team member to select a marble that represents their current emotional state and drop it into a jar. What is Maxim's purpose of using mood marbles in this scenario?","options":["To identify key issues in the project","To track project milestones and deadlines","To evaluate how the team is feeling","To organize tasks and assign responsibilities"],"answer":"To evaluate how the team is feeling"},{"id":15,"question":"Which Agile practice allows a team to review their performance and reflect on ways to improve?","options":["Social contract","Retrospective","Stand-up","Mood marbles"],"answer":"Retrospective"},{"id":16,"question":"When creating a social contract, which step involves writing down ideas on sticky notes and sticking them anywhere on the wall?","options":["Finalize the contract","Discuss and share","Brainstorm individually","Group similar ideas"],"answer":"Brainstorm individually"},{"id":17,"question":"After the team understands the problems, challenges, and desired outcomes, what is the next step in the Agile pattern?","options":["Explore the required changes and strategies","Mobilize the team","Build and test","Implement the changes"],"answer":"Explore the required changes and strategies"},{"id":18,"question":"What is the first step in Agile patterns, regardless of the specific pattern being used?","options":["Understand","Mobilize","Explore and strategize","Build, test, and implement"],"answer":"Mobilize"},{"id":19,"question":"Which Agile pattern helps business leaders develop the company's direction?","options":["Agile operations pattern","Agile program pattern","Agile strategy and governance pattern"],"answer":"Agile strategy and governance pattern"},{"id":20,"question":"Which Agile pattern is suitable for managing project work with a defined start and end?","options":["Agile operations pattern","Agile program pattern","Agile strategy and governance pattern"],"answer":"Agile program pattern"},{"id":21,"question":"Winny manages the payroll system for a company and needs to handle the monthly process of distributing salaries to employees. Which Agile pattern should Winny use to effectively manage this repeatable process?","options":["Agile operations pattern","Agile strategy and governance pattern","Agile program pattern"],"answer":"Agile operations pattern"},{"id":22,"question":"Paleo is a great team member who always admits to his mistakes and is willing to ask others for help. Which Agile value is Paleo demonstrating?","options":["Openness","Courage","Trust","Respect"],"answer":"Courage"},{"id":23,"question":"Your team has just defined the problem they are trying to solve. What is the next step to ensure clarity of outcome?","options":["Determine the user outcome.","Keep the user outcome in sight.","Identify risks and dependencies.","Collect feedback from stakeholders."],"answer":"Determine the user outcome."},{"id":24,"question":"Some students post photos on social media causing issues. The principal and teachers define the problem and outcome, then leave the students to figure out who, what, and how to get the work done. Which Agile principle is described?","options":["Self-directed teams","Clarity of outcome","Iteration and learning"],"answer":"Self-directed teams"},{"id":25,"question":"Sally and her friends try different lava solutions one by one for their volcano project, improving each time until they get the best outcome. What Agile principle is the group applying?","options":["Clarity of outcome","Self-directed teams","Iteration and learning"],"answer":"Iteration and learning"},{"id":26,"question":"Your team is experiencing a lot of conflict and work isn't getting completed. You want to figure out how the team is feeling. What Agile practice would be most appropriate?","options":["Wall of work","Social contract","Shuhari","Mood marbles"],"answer":"Mood marbles"},{"id":27,"question":"During a heated discussion, Puran notices a team member's suggestion is different from the rest. Instead of dismissing it, Puran takes time to understand their perspective by asking thoughtful, non-judgmental questions. Which Agile value is Puran demonstrating?","options":["Empathy","Respect","Courage","Openness"],"answer":"Empathy"},{"id":28,"question":"As an Agile practitioner, what is the central question you should always ask yourself?","options":["How can I get better today?","What is puzzling me?","Am I breaking the social contract?","How can I work faster?"],"answer":"How can I get better today?"},{"id":29,"question":"You are working on a project for your boss and have just finished a significant part of it. You're excited to share it and get feedback. What Agile practice will you be participating in?","options":["Showcase","Social contract","Shuhari","Retrospective"],"answer":"Showcase"},{"id":30,"question":"Lily is the head of a non-profit organization that aims to expand its reach and impact over the next five years. She wants to develop a clear direction for the organization. Which Agile pattern should Lily use?","options":["Agile strategy and governance pattern","Agile operations pattern","Agile program pattern"],"answer":"Agile strategy and governance pattern"},{"id":31,"question":"A new team meets to think about how they will work together. They write ideas on sticky notes, group similar ideas, write descriptive statements, and rewrite each as 'I expect that...' What Agile practice is the team using?","options":["Retrospective","Social contract","Mood marbles","Showcase"],"answer":"Social contract"},{"id":32,"question":"Which of the following statements is false?","options":["Agile can be done remotely.","Agile can be used for all projects.","Agile is very disciplined.","Agile is limited to software work."],"answer":"Agile is limited to software work."},{"id":33,"question":"You're in a stand-up and a team member has been talking for a while going into technical details of a blocking problem. He asks for your opinion. What should you do?","options":["Defer the question to your manager or team lead.","Tell him you don't know and suggest contacting an expert.","Discuss some solutions with the team.","Suggest scheduling another meeting to discuss the issue in more depth."],"answer":"Suggest scheduling another meeting to discuss the issue in more depth."},{"id":34,"question":"During a stand-up, two questions are: 'What have you completed since the last stand-up?' and 'What will you be working on before the next stand-up?' What is the third question?","options":["What are your proposals for some initiatives for the team to try out?","What are your ideas to solve your teammate's blockers?","What are your blockers?","What feedback have you received from stakeholders?"],"answer":"What are your blockers?"},{"id":35,"question":"Jason listens to others' viewpoints, suggestions, and ideas without judgment or dismissiveness. Which Agile value is Jason demonstrating?","options":["Respect","Openness","Courage","Trust"],"answer":"Openness"},{"id":36,"question":"Complete the sentence: Agile principles guide ___________ you do your work.","options":["when","who","how","why"],"answer":"how"},{"id":37,"question":"Which of the following is an example of program work?","options":["Conducting routine maintenance of office equipment","Resolving customer support tickets","Organizing a charity fundraiser event","Providing IT support for employees"],"answer":"Organizing a charity fundraiser event"},{"id":38,"question":"Which of the following teams is made up of members who do the bulk of the work?","options":["Core team","Extended team","Governance team"],"answer":"Core team"},{"id":39,"question":"Which of the following best describes the purpose of the event phase in a project?","options":["To evaluate the success of the project after completion","To assign roles and responsibilities to team members","To identify the initial trigger or occurrence that signals the need for a project","To finalize the project budget"],"answer":"To identify the initial trigger or occurrence that signals the need for a project"},{"id":40,"question":"What is the primary purpose of a discovery workshop?","options":["To finalize the project budget","To assess team members' performance","To create a detailed project timeline","To align all team members on the project goals"],"answer":"To align all team members on the project goals"},{"id":41,"question":"Which of the following questions is typically addressed by the team during the discovery phase? (Select three that apply)","options":["What problem needs to be solved?","What are the blockers?","What is the budget for the project?","How will progress be measured?"],"answer":["What problem needs to be solved?","What are the blockers?","How will progress be measured?"]},{"id":42,"question":"Your boss gives you a new project. Brian is ready to jump into the work. You explain how important it is to get everything set up before starting. Which of the following is unnecessary for the team to do before the first iteration begins?","options":["Have a showcase meeting.","Identify epics, features, and user stories.","Have a shared understanding of Agile and how the team will work.","Set project goals and make sure the team has a clear understanding of the goals."],"answer":"Have a showcase meeting."},{"id":43,"question":"Your team is pulling items from the backlog to work on for the next iteration creating an app for multiplication problems. What Agile practice is your team using to map progress for the iteration?","options":["Wall of work","User story","Social contract","Retrospective"],"answer":"Wall of work"},{"id":44,"question":"What is the smallest unit of work in the Agile framework?","options":["Features","Backlog","User stories","Epics"],"answer":"User stories"},{"id":45,"question":"Which one of the following is applied to all stories?","options":["Acceptance criteria","Acceptance list","Definition of done","Definition criteria"],"answer":"Definition of done"},{"id":46,"question":"Which of the following describes the high-level activities that span multiple iterations and possibly releases?","options":["Epics","User stories","Features","Contracts"],"answer":"Epics"},{"id":47,"question":"During an iteration release, the team received user feedback requiring a new requirement to be added to a feature. What should the team do?","options":["Decide how to let the client know they can't add the requirement into the product.","Change the work they're doing now to incorporate the new requirement.","Come up with an alternative, quick solution so they don't have to add the new requirement.","Decide how to work the new requirements into future iterations."],"answer":"Decide how to work the new requirements into future iterations."},{"id":48,"question":"Your team members just finished their first iteration. What should they do next?","options":["Start the next iteration.","Choose a new event to start working on.","Start the process over with a discovery workshop.","Move on to the next project."],"answer":"Start the next iteration."},{"id":49,"question":"You're starting a new project and the team is anxious to get to work. Which of the following is unnecessary for the team to complete before the first iteration begins?","options":["Set release goals.","Create a social contract.","Have a retrospective meeting.","Set project standards and guidelines."],"answer":"Have a retrospective meeting."},{"id":50,"question":"Which of the following is outside the scope of the discovery phase?","options":["The approved proposal is in place.","The release plan is complete.","The team defines the problem to be solved.","The team makes better decisions on how the work will get done."],"answer":"The release plan is complete."},{"id":51,"question":"Your manager asks your team to create a project map that outlines when different parts of your project will be completed and made available. What do you call this Agile practice?","options":["User story","Wall of work","Release plan","Social contract"],"answer":"Release plan"},{"id":52,"question":"Your boss assigns you to a project with three other core members and hands over an approved proposal. What phase do you move to now?","options":["Program funnel","Event","Discovery","Delivery"],"answer":"Delivery"},{"id":53,"question":"Which of the following phases starts the program pattern?","options":["Program funnel","Event","Discovery","Delivery"],"answer":"Event"},{"id":54,"question":"Your team is holding a discovery workshop. Which of the following questions is outside the scope of this workshop?","options":["What is the solution?","What is the cost?","What are the blockers?","What is the problem we're trying to solve?"],"answer":"What is the cost?"},{"id":55,"question":"You work at a car dealership. Juan calls to buy a car. He specifies a safe four-wheel-drive SUV with dark leather interior. Before he arrives, you have the car washed, waxed, filled with gas, and all paperwork completed. Which items are considered the dealership's 'definition of done'?","options":["The paperwork with all the finance details","Car washed, waxed, and filled with gas, and all the paperwork completed","The research you did to find the exact car for Juan","A safe four-wheel-drive SUV with dark leather interior"],"answer":"Car washed, waxed, and filled with gas, and all the paperwork completed"},{"id":56,"question":"In which phase does a small team spend a few days to understand the problem, explore options, make sure the right people are in place, and determine whether to move forward?","options":["Discovery","Delivery","Event","Program funnel"],"answer":"Discovery"},{"id":57,"question":"Which of the following is an example of operations work?","options":["Planning a project timeline","Resolving customer support tickets","Developing a new product feature","Conducting market research"],"answer":"Resolving customer support tickets"},{"id":58,"question":"After evaluating the urgency of several help desk tickets, Mark decides which ones should be addressed first based on their importance. Which phase of the operations pattern is Mark engaged in?","options":["Prioritization","Delivery","Request","Operations funnel"],"answer":"Prioritization"},{"id":59,"question":"On a core team, who is responsible for holding the vision of the outcome and prioritizing the work?","options":["Subject matter expert","Iteration manager","Product owner","Scrum master"],"answer":"Product owner"},{"id":60,"question":"Which of the following teams is responsible for providing additional support and resources as needed?","options":["Extended team","Governance team","Agile team","Core team"],"answer":"Extended team"},{"id":61,"question":"Which of the following teams provides strategic direction for the entire team?","options":["Agile team","Extended team","Governance team","Core team"],"answer":"Governance team"},{"id":62,"question":"Puran helps the team by removing obstacles, making sure they can choose their own tasks, and encouraging them to work better together. What is Puran's role?","options":["Iteration manager","Stakeholder","Subject matter expert","Product owner"],"answer":"Iteration manager"},{"id":63,"question":"Robert is in a group that meets to make big decisions about a project. They check the project plan, track progress, and decide if the project is still a good idea. What is Robert's role?","options":["Sponsor","Stakeholder","Product owner","Steering committee member"],"answer":"Steering committee member"},{"id":64,"question":"Leslie ensures that her team members only start new tasks once they have completed their current ones, rather than continuously receiving new tasks. Which principle of the Kanban method is Leslie applying?","options":["Improve collaboratively","Limit WIP","Visualize the work","Manage flow"],"answer":"Limit WIP"},{"id":65,"question":"Which of the following principles emphasizes controlling the number of ongoing tasks?","options":["Make process policies explicit","Limit WIP","Manage flow","Visualize the work"],"answer":"Limit WIP"},{"id":66,"question":"Gian is leading a team and makes sure that all the rules and guidelines for the project are clearly written down and displayed where everyone can see them. Which principle of the Kanban method is Gian applying?","options":["Visualize the work","Improve collaboratively","Make process policies explicit","Manage flow"],"answer":"Make process policies explicit"},{"id":67,"question":"Which of the following statements is false about the pull system for workflow processing?","options":["Lead times become more predictable.","Overburdening is eliminated.","WIP limits manage the workflow.","Managers pull the work for the team."],"answer":"Managers pull the work for the team."},{"id":68,"question":"Which of the following principles emphasizes making small, gradual adjustments over time to refine processes?","options":["Manage flow","Improve collaboratively","Make process policies explicit","Visualize the work"],"answer":"Improve collaboratively"},{"id":69,"question":"Which of the following statements is true about stand-ups in operations work?","options":["Stand-ups must be conducted every day.","Stand-ups are not needed in operations work.","Stand-ups are run by the manager.","Stand-ups are typically done once a month."],"answer":"Stand-ups must be conducted every day."},{"id":70,"question":"On a core team, who has more experience and can assist the other team members with the content?","options":["Subject matter expert","Iteration manager","Change manager","Stakeholder"],"answer":"Subject matter expert"},{"id":71,"question":"Your team has just completed gathering all the incoming requests for system improvements. What is the next step to ensure these requests are handled appropriately?","options":["Communicate the requests to the development team.","Prioritize the requests based on urgency and impact.","Review the requests with stakeholders.","Implement the improvements immediately."],"answer":"Prioritize the requests based on urgency and impact."},{"id":72,"question":"In Agile teams, what does it mean to be 'cross-functional'?","options":["Team members are all from the same department and have similar skills.","Team members focus on one type of task or skill.","Team members come from various departments and have a variety of skills.","Team members rotate through different roles every week."],"answer":"Team members come from various departments and have a variety of skills."},{"id":73,"question":"Fill in the blanks: ____________ work refers to managing ongoing, routine tasks necessary for daily functioning, while ____________ work involves coordinating specific projects to achieve strategic goals.","options":["Program, operations","Operations, Agile","Operations, program","Agile, program"],"answer":"Operations, program"},{"id":74,"question":"Which of the following statements is true about bottlenecks in the operations pattern?","options":["Once a bottleneck is resolved, no new bottlenecks will appear.","Teams and leaders can decide where the bottleneck occurs to improve efficiency.","Bottlenecks can be removed from the process.","Bottlenecks have no impact on the delivery speed of the process."],"answer":"Teams and leaders can decide where the bottleneck occurs to improve efficiency."},{"id":75,"question":"Your team gets together and decides to create a schedule for the next two weeks, planning what each member can commit to completing. Which Agile practice did the team incorporate?","options":["Wall of work","Retrospective","Iterations","Social contract"],"answer":"Iterations"},{"id":76,"question":"Your family sits down to talk about ways to get chores done more quickly and decides to hire a helper to come in once a week. What did your family take part in?","options":["Bottleneck work","Continuous improvement","Operations funnel","Social contract"],"answer":"Continuous improvement"},{"id":77,"question":"Your teacher gives you a group assignment. You meet with the team to figure out what tasks need to be completed. What should you do next?","options":["Complete the longest tasks first to get them out of the way.","Prioritize the tasks to focus on the most important ones first.","Start working on the easiest tasks first.","Start working on all tasks at once to finish faster."],"answer":"Prioritize the tasks to focus on the most important ones first."},{"id":78,"question":"What is the correct sequence of phases to implement the operations pattern?","options":["Request, prioritization, operations funnel, and delivery","Operations funnel, request, prioritization, and delivery","Prioritization, delivery, operations funnel, and request","Request, operations funnel, prioritization, and delivery"],"answer":"Request, prioritization, operations funnel, and delivery"},{"id":79,"question":"Which of the following teams has members who do the bulk of the work?","options":["Core team","Agile team","Extended team","Governance team"],"answer":"Core team"},{"id":80,"question":"Which of the following is true about a wall of work?","options":["A wall of work, at a minimum, has three columns: to do, in progress, and done.","A wall of work is updated every month.","Each work card on the wall of work should have a minimum of three tasks noted on it.","A wall of work is managed by the team's manager."],"answer":"A wall of work, at a minimum, has three columns: to do, in progress, and done."},{"id":81,"question":"Which of the following is a key characteristic of operations work?","options":["Involves managing multiple projects with a defined start and end date","Starts with initiation and ends with completion when the objectives are met","Includes planning and executing initiatives with set milestones","Focuses on ongoing, routine tasks necessary for daily functioning"],"answer":"Focuses on ongoing, routine tasks necessary for daily functioning"},{"id":82,"question":"Which of the following is an example of operations work?","options":["Redesigning a product interface","Setting up a new project management tool","Conducting daily system health checks","Developing a new marketing strategy for a product launch"],"answer":"Conducting daily system health checks"},{"id":83,"question":"Which of the following is a question asked by the team to complete a retrospective?","options":["Who made the mistake?","Did we meet deadlines?","What went well?","Did everyone contribute equally?"],"answer":"What went well?"}];
 
-// ── State ─────────────────────────────────────────────────────────────────────
-let questions = [];
-let current   = 0;
-let score     = 0;
-let history   = []; // { question, options, answer, userAnswer, isCorrect, isMulti }
+// ── State ──
+let questions = [], current = 0, score = 0;
+let history   = []; // sparse array indexed by question position
 let answered  = false;
+let flagged   = {};
+let timerInterval = null, timeLeft = 30 * 60;
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
+const LETTERS = ['a','b','c','d','e','f'];
+
+// ── Helpers ──
 function shuffle(arr) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -317,115 +422,173 @@ function shuffle(arr) {
   }
   return a;
 }
+function normalise(v)       { return Array.isArray(v) ? v.slice().sort() : v; }
+function arrEq(a, b)        { return a.length === b.length && a.every((v,i) => v === b[i]); }
+function isCorrect(ua, ca)  { return Array.isArray(ca) ? Array.isArray(ua) && arrEq(normalise(ua), normalise(ca)) : ua === ca; }
 
-function normalise(v) {
-  return Array.isArray(v) ? v.slice().sort() : v;
+// ── Timer ──
+function startTimer() {
+  timeLeft = 30 * 60;
+  clearInterval(timerInterval);
+  updateTimerDisplay();
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    updateTimerDisplay();
+    if (timeLeft <= 0) { clearInterval(timerInterval); finishQuiz(); }
+  }, 1000);
+}
+function updateTimerDisplay() {
+  const m = Math.floor(timeLeft / 60), s = timeLeft % 60;
+  const el = document.getElementById('timer-val');
+  el.textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  el.classList.toggle('warn', timeLeft <= 300);
 }
 
-function arraysEqual(a, b) {
-  if (a.length !== b.length) return false;
-  return a.every((v, i) => v === b[i]);
+// ── Nav grid ──
+function renderNavGrid() {
+  const grid = document.getElementById('nav-grid');
+  grid.innerHTML = '';
+  questions.forEach((_, i) => {
+    const div = document.createElement('div');
+    div.className = 'nav-num';
+    div.textContent = i + 1;
+    if (i === current) div.classList.add('nav-current');
+    else if (history[i]) div.classList.add('nav-answered');
+    if (flagged[i]) div.classList.add('nav-flagged');
+    div.addEventListener('click', () => jumpTo(i));
+    grid.appendChild(div);
+  });
 }
 
-function isCorrectAnswer(userAnswer, correctAnswer) {
-  if (Array.isArray(correctAnswer)) {
-    return Array.isArray(userAnswer) && arraysEqual(normalise(userAnswer), normalise(correctAnswer));
+function jumpTo(i) {
+  if (i === current) return;
+  // Allow navigating only to answered questions or back
+  if (history[i] !== undefined) {
+    current = i;
+    renderQuestion(true);
+  } else if (i === (history.filter(Boolean).length)) {
+    // next unanswered
+    current = i;
+    renderQuestion(false);
   }
-  return userAnswer === correctAnswer;
 }
 
-// ── Screens ───────────────────────────────────────────────────────────────────
+// ── Screens ──
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ── Start ─────────────────────────────────────────────────────────────────────
+// ── Start ──
 function startQuiz() {
   questions = shuffle(ALL_QUESTIONS);
-  current   = 0;
-  score     = 0;
-  history   = [];
-  answered  = false;
+  current = 0; score = 0; history = []; answered = false; flagged = {};
   showScreen('quiz-screen');
-  renderQuestion();
+  startTimer();
+  renderQuestion(false);
+}
+function restartQuiz() { clearInterval(timerInterval); startQuiz(); }
+
+// ── Flag ──
+function toggleFlag() {
+  flagged[current] = !flagged[current];
+  const btn = document.getElementById('flag-btn');
+  btn.textContent = flagged[current] ? '⚑ Remove flag' : '⚑ Flag question';
+  btn.classList.toggle('flagged', !!flagged[current]);
+  renderNavGrid();
 }
 
-function restartQuiz() { startQuiz(); }
+// ── Render question ──
+function renderQuestion(viewMode) {
+  const entry   = history[current];
+  const viewing = viewMode && entry !== undefined;
+  answered = viewing;
 
-// ── Render Question ───────────────────────────────────────────────────────────
-function renderQuestion() {
-  answered = false;
-  const q     = questions[current];
+  const q       = questions[current];
   const isMulti = Array.isArray(q.answer);
-  const total = questions.length;
 
-  document.getElementById('q-counter').textContent     = `Question ${current + 1} of ${total}`;
-  document.getElementById('score-display').textContent = `Score: ${score}`;
-  document.getElementById('question-text').textContent = q.question;
+  document.getElementById('qh-num').textContent    = `Question ${current + 1}`;
+  document.getElementById('qh-status').textContent = viewing ? 'Answer saved' : 'Not yet answered';
 
-  const hint = document.getElementById('multi-hint');
-  hint.style.display = isMulti ? 'block' : 'none';
+  const flagBtn = document.getElementById('flag-btn');
+  flagBtn.textContent = flagged[current] ? '⚑ Remove flag' : '⚑ Flag question';
+  flagBtn.classList.toggle('flagged', !!flagged[current]);
 
-  // Progress bar (based on answered so far)
-  const pct = (current / total) * 100;
-  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('question-text').textContent  = q.question;
+  document.getElementById('multi-hint').style.display   = isMulti ? 'block' : 'none';
+  document.getElementById('r-hint').style.display       = viewing ? 'none' : 'block';
+  document.getElementById('clear-btn').style.display    = 'none';
 
   // Options
   const container = document.getElementById('options-container');
   container.innerHTML = '';
-  const shuffledOptions = shuffle(q.options);
 
-  shuffledOptions.forEach((opt, idx) => {
+  const opts = viewing ? entry.options : shuffle(q.options);
+  const userAnswers   = viewing ? (Array.isArray(entry.userAnswer) ? entry.userAnswer : [entry.userAnswer]) : [];
+  const correctAns    = Array.isArray(q.answer) ? q.answer : [q.answer];
+
+  opts.forEach((opt, idx) => {
     const div   = document.createElement('div');
-    div.className = 'option';
-    div.id = `opt-${idx}`;
+    div.className = 'option' + (viewing ? ' disabled' : '');
 
-    const inputType = isMulti ? 'checkbox' : 'radio';
+    if (viewing) {
+      const isCor = correctAns.includes(opt);
+      const isCho = userAnswers.includes(opt);
+      if (isCor && isCho)   div.classList.add('correct');
+      else if (isCor)        div.classList.add('reveal-correct');
+      else if (isCho)        div.classList.add('wrong');
+    }
+
+    const letter = document.createElement('div');
+    letter.className = 'option-letter';
+    letter.textContent = LETTERS[idx] || idx + 1;
+
     const input = document.createElement('input');
-    input.type  = inputType;
+    input.type  = isMulti ? 'checkbox' : 'radio';
     input.name  = 'quiz-option';
     input.value = opt;
-    input.id    = `input-${idx}`;
-    input.addEventListener('change', onSelectionChange);
+    input.id    = `inp-${idx}`;
+    if (viewing) { input.checked = userAnswers.includes(opt); input.disabled = true; }
+    else input.addEventListener('change', onSelect);
 
     const label = document.createElement('label');
-    label.htmlFor   = `input-${idx}`;
+    label.htmlFor     = `inp-${idx}`;
     label.textContent = opt;
 
-    div.appendChild(input);
-    div.appendChild(label);
-    div.addEventListener('click', (e) => {
-      if (answered) return;
-      if (e.target !== input) input.click();
-    });
-
+    div.append(letter, input, label);
+    if (!viewing) div.addEventListener('click', e => { if (e.target !== input) input.click(); });
     container.appendChild(div);
   });
 
   // Buttons
-  const btnSubmit = document.getElementById('btn-submit');
-  const btnNext   = document.getElementById('btn-next');
-  const btnStop   = document.getElementById('btn-stop');
+  const bSubmit = document.getElementById('btn-submit');
+  const bNext   = document.getElementById('btn-next');
+  const bPrev   = document.getElementById('btn-prev');
 
-  btnSubmit.disabled      = true;
-  btnSubmit.style.display = 'block';
-  btnNext.style.display   = 'none';
-  btnStop.style.display   = current > 0 ? 'block' : 'none';
+  bPrev.style.display = current > 0 ? 'block' : 'none';
 
-  document.getElementById('r-hint').style.display = 'block';
+  if (viewing) {
+    bSubmit.style.display = 'none';
+    bNext.style.display   = 'block';
+    bNext.textContent     = current === questions.length - 1 ? 'Finish attempt' : 'Next page →';
+  } else {
+    bSubmit.disabled      = true;
+    bSubmit.style.display = 'block';
+    bNext.style.display   = 'none';
+  }
+
+  renderNavGrid();
 }
 
-function onSelectionChange() {
+// ── Selection change ──
+function onSelect() {
   if (answered) return;
-  const selected = getSelected();
-  document.getElementById('btn-submit').disabled = selected.length === 0;
-
-  // Highlight selected options
+  const sel = getSelected();
+  document.getElementById('btn-submit').disabled     = sel.length === 0;
+  document.getElementById('clear-btn').style.display = sel.length > 0 ? 'block' : 'none';
   document.querySelectorAll('.option').forEach(div => {
-    const input = div.querySelector('input');
-    div.classList.toggle('selected', input.checked);
+    div.classList.toggle('selected', div.querySelector('input').checked);
   });
 }
 
@@ -433,142 +596,122 @@ function getSelected() {
   return [...document.querySelectorAll('#options-container input:checked')].map(i => i.value);
 }
 
-// ── Submit ────────────────────────────────────────────────────────────────────
+function clearChoice() {
+  document.querySelectorAll('#options-container input').forEach(i => i.checked = false);
+  document.querySelectorAll('.option').forEach(d => d.classList.remove('selected'));
+  document.getElementById('btn-submit').disabled     = true;
+  document.getElementById('clear-btn').style.display = 'none';
+}
+
+// ── Submit ──
 function submitAnswer() {
   if (answered) return;
   answered = true;
 
-  const q          = questions[current];
-  const isMulti    = Array.isArray(q.answer);
-  const userAnswer = isMulti ? getSelected() : getSelected()[0];
-  const correct    = isCorrectAnswer(userAnswer, q.answer);
+  const q       = questions[current];
+  const isMulti = Array.isArray(q.answer);
+  const ua      = isMulti ? getSelected() : getSelected()[0];
+  const ok      = isCorrect(ua, q.answer);
 
-  if (correct) score++;
+  if (ok) score++;
 
-  // Save to history
-  history.push({
-    question:   q.question,
-    options:    [...document.querySelectorAll('#options-container input')].map(i => i.value),
-    answer:     q.answer,
-    userAnswer: userAnswer,
-    isCorrect:  correct,
-    isMulti:    isMulti
-  });
+  const opts = [...document.querySelectorAll('#options-container input')].map(i => i.value);
+  history[current] = { question: q.question, options: opts, answer: q.answer, userAnswer: ua, isCorrect: ok, isMulti };
 
-  // Colour the options
+  const correctAns = Array.isArray(q.answer) ? q.answer : [q.answer];
   document.querySelectorAll('.option').forEach(div => {
-    const input   = div.querySelector('input');
-    const val     = input.value;
-    const correctAnswers = Array.isArray(q.answer) ? q.answer : [q.answer];
-
+    const inp = div.querySelector('input');
+    inp.disabled = true;
     div.classList.remove('selected');
-    input.disabled = true;
-
-    if (correctAnswers.includes(val) && input.checked) {
-      div.classList.add('correct');        // chose it and it's right
-    } else if (correctAnswers.includes(val) && !input.checked) {
-      div.classList.add('reveal-correct'); // didn't choose it but it's right
-    } else if (!correctAnswers.includes(val) && input.checked) {
-      div.classList.add('wrong');          // chose it and it's wrong
-    }
+    div.classList.add('disabled');
+    if (correctAns.includes(inp.value) && inp.checked)  div.classList.add('correct');
+    else if (correctAns.includes(inp.value))             div.classList.add('reveal-correct');
+    else if (inp.checked)                                div.classList.add('wrong');
   });
 
-  document.getElementById('score-display').textContent = `Score: ${score}`;
-  document.getElementById('btn-submit').style.display  = 'none';
-  document.getElementById('btn-next').style.display    = 'block';
-  document.getElementById('r-hint').style.display      = 'none';
+  document.getElementById('qh-status').textContent   = 'Answer saved';
+  document.getElementById('btn-submit').style.display = 'none';
+  document.getElementById('clear-btn').style.display  = 'none';
+  document.getElementById('r-hint').style.display     = 'none';
 
-  const isLast = current === questions.length - 1;
-  document.getElementById('btn-next').textContent = isLast ? 'See Results' : 'Next Question';
+  const bNext = document.getElementById('btn-next');
+  bNext.style.display = 'block';
+  bNext.textContent   = current === questions.length - 1 ? 'Finish attempt' : 'Next page →';
+
+  renderNavGrid();
 }
 
-// ── Next ──────────────────────────────────────────────────────────────────────
+// ── Navigation ──
 function nextQuestion() {
   current++;
-  if (current >= questions.length) {
-    finishQuiz();
-  } else {
-    renderQuestion();
-  }
+  if (current >= questions.length) finishQuiz();
+  else renderQuestion(history[current] !== undefined);
 }
 
-// ── Finish / Results ──────────────────────────────────────────────────────────
+function prevQuestion() {
+  if (current > 0) { current--; renderQuestion(true); }
+}
+
+// ── Finish ──
 function finishQuiz() {
-  document.getElementById('btn-stop').style.display = 'none';
-  document.getElementById('r-hint').style.display   = 'none';
+  clearInterval(timerInterval);
   showScreen('results-screen');
   renderResults();
 }
 
+// ── Results ──
 function renderResults() {
-  const total = history.length;
-  const pct   = total === 0 ? 0 : Math.round((score / total) * 100);
+  const answered = history.filter(Boolean);
+  const total    = answered.length;
+  const pct      = total === 0 ? 0 : Math.round((score / total) * 100);
 
   document.getElementById('score-pct').textContent  = pct + '%';
   document.getElementById('score-frac').textContent = `${score} / ${total}`;
 
   const circle = document.getElementById('score-circle');
   circle.className = 'score-circle';
-  if      (pct >= 80) { circle.classList.add('score-great'); document.getElementById('score-msg').textContent = 'Excellent work!'; }
-  else if (pct >= 60) { circle.classList.add('score-good');  document.getElementById('score-msg').textContent = 'Good job, keep practicing!'; }
-  else if (pct >= 40) { circle.classList.add('score-ok');    document.getElementById('score-msg').textContent = 'Not bad — review the answers below.'; }
-  else                { circle.classList.add('score-poor');  document.getElementById('score-msg').textContent = 'Keep studying, you\'ll get there!'; }
+  let cls, msg, sub;
+  if      (pct >= 80) { cls = 'sc-great'; msg = 'Excellent work!';      sub = 'You have a strong grasp of Agile.'; }
+  else if (pct >= 60) { cls = 'sc-good';  msg = 'Good job!';            sub = 'Keep practicing to solidify your knowledge.'; }
+  else if (pct >= 40) { cls = 'sc-ok';    msg = 'Not bad';              sub = 'Review the answers below and try again.'; }
+  else                { cls = 'sc-poor';  msg = 'Keep studying';        sub = "You'll improve with more practice!"; }
+  circle.classList.add(cls);
+  document.getElementById('score-msg').textContent = msg;
+  document.getElementById('score-sub').textContent = sub;
 
   const list = document.getElementById('review-list');
   list.innerHTML = '';
-
   history.forEach((entry, i) => {
+    if (!entry) return;
     const card = document.createElement('div');
-    card.className = `review-card ${entry.isCorrect ? 'correct-card' : 'wrong-card'}`;
+    card.className = `rv-card ${entry.isCorrect ? 'ok' : 'bad'}`;
 
-    const icon = entry.isCorrect ? '✓' : '✗';
-
-    const userAnswerText = Array.isArray(entry.userAnswer)
-      ? (entry.userAnswer.length ? entry.userAnswer.join(', ') : 'No answer selected')
-      : (entry.userAnswer || 'No answer selected');
-
-    const correctAnswerText = Array.isArray(entry.answer)
-      ? entry.answer.join(', ')
-      : entry.answer;
+    const uaTxt  = Array.isArray(entry.userAnswer) ? (entry.userAnswer.length ? entry.userAnswer.join(', ') : 'No answer') : (entry.userAnswer || 'No answer');
+    const caTxt  = Array.isArray(entry.answer)     ? entry.answer.join(', ')  : entry.answer;
+    const icon   = entry.isCorrect ? `<span style="color:#16a34a">&#10003;</span>` : `<span style="color:#dc2626">&#10007;</span>`;
 
     card.innerHTML = `
-      <div class="review-qnum">Q${i + 1} &nbsp; <span style="color:${entry.isCorrect ? '#22c55e' : '#ef4444'}">${icon}</span></div>
-      <div class="review-question">${entry.question}</div>
-      <div class="review-answers">
-        <div class="review-row">
-          <span class="review-label yours">Your answer:</span>
-          <span class="review-val">${userAnswerText}</span>
-        </div>
-        ${!entry.isCorrect ? `
-        <div class="review-row">
-          <span class="review-label correct">Correct answer:</span>
-          <span class="review-val">${correctAnswerText}</span>
-        </div>` : ''}
-      </div>
-    `;
+      <div class="rv-qnum">Q${i + 1} &nbsp; ${icon}</div>
+      <div class="rv-q">${entry.question}</div>
+      <div>
+        <div class="rv-row"><span class="rv-lbl yours">Your answer:</span><span class="rv-val">${uaTxt}</span></div>
+        ${!entry.isCorrect ? `<div class="rv-row"><span class="rv-lbl correct">Correct answer:</span><span class="rv-val">${caTxt}</span></div>` : ''}
+      </div>`;
     list.appendChild(card);
   });
 }
 
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
 
-// ── R key: reveal / glow correct answer ──────────────────────────────────────
-document.addEventListener('keydown', (e) => {
-  if (e.key.toLowerCase() !== 'r') return;
-  if (answered) return;
-  // Only active on the quiz screen
+// ── R key: reveal correct answer ──
+document.addEventListener('keydown', e => {
+  if (e.key.toLowerCase() !== 'r' || answered) return;
   if (!document.getElementById('quiz-screen').classList.contains('active')) return;
-
-  const q = questions[current];
-  const correctAnswers = Array.isArray(q.answer) ? q.answer : [q.answer];
-
+  const correct = Array.isArray(questions[current].answer) ? questions[current].answer : [questions[current].answer];
   document.querySelectorAll('.option').forEach(div => {
-    const val = div.querySelector('input').value;
-    if (correctAnswers.includes(val)) {
-      div.classList.remove('glow'); // reset animation
-      void div.offsetWidth;         // force reflow so animation restarts
+    if (correct.includes(div.querySelector('input').value)) {
+      div.classList.remove('glow');
+      void div.offsetWidth;
       div.classList.add('glow');
     }
   });
