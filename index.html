@@ -147,7 +147,9 @@
     .option label { cursor: pointer; font-size: .875rem; line-height: 1.5; flex: 1; }
     .option.disabled label { cursor: default; }
 
-    .q-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 4px; }
+    .q-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; }
+    .q-footer-left  { display: flex; align-items: center; gap: 10px; }
+    .q-footer-right { display: flex; align-items: center; gap: 8px; }
     .clear-btn {
       background: #fff; border: 1px solid #0f6cbf;
       color: #0f6cbf; padding: 3px 10px;
@@ -161,15 +163,6 @@
       font-size: .68rem; font-family: monospace;
     }
 
-    /* Nav buttons */
-    .bottom-nav {
-      display: grid;
-      grid-template-columns: 1fr 200px;
-      gap: 14px;
-      margin-top: 12px;
-    }
-    .bottom-nav-left  { display: flex; align-items: center; }
-    .bottom-nav-right { display: flex; gap: 8px; align-items: center; margin-left: auto; }
 
     /* ── Sidebar ── */
     .sidebar { background: #fff; border: 1px solid #dee2e6; border-radius: 3px; }
@@ -334,9 +327,16 @@
           <div class="multi-hint" id="multi-hint" style="display:none;">Select all that apply</div>
           <div class="options" id="options-container"></div>
           <div class="q-footer">
-            <button class="clear-btn" id="clear-btn" onclick="clearChoice()" style="display:none;">Clear my choice</button>
-            <div class="r-hint" id="r-hint" style="display:none;">
-              press <kbd>R</kbd> to reveal answer
+            <div class="q-footer-left">
+              <button class="clear-btn" id="clear-btn" onclick="clearChoice()" style="display:none;">Clear my choice</button>
+              <div class="r-hint" id="r-hint" style="display:none;">
+                press <kbd>R</kbd> to reveal answer
+              </div>
+            </div>
+            <div class="q-footer-right">
+              <button class="btn btn-outline" id="btn-prev" onclick="prevQuestion()" style="display:none;">&#8592; Previous</button>
+              <button class="btn btn-primary" id="btn-submit" onclick="submitAnswer()" disabled>Confirm answer</button>
+              <button class="btn btn-outline" id="btn-next" onclick="nextQuestion()" style="display:none;">Next &#8594;</button>
             </div>
           </div>
         </div>
@@ -352,18 +352,6 @@
           <div class="timer-val" id="timer-val">30:00</div>
         </div>
       </div>
-    </div>
-
-    <!-- Bottom nav -->
-    <div class="bottom-nav">
-      <div class="bottom-nav-left">
-        <button class="btn btn-outline" id="btn-prev" onclick="prevQuestion()" style="display:none;">&#8592; Previous page</button>
-        <div class="bottom-nav-right">
-          <button class="btn btn-primary" id="btn-submit" onclick="submitAnswer()" disabled>Confirm answer</button>
-          <button class="btn btn-outline" id="btn-next" onclick="nextQuestion()" style="display:none;">Next page &#8594;</button>
-        </div>
-      </div>
-      <div></div>
     </div>
   </div>
 </div>
